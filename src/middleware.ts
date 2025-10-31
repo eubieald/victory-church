@@ -1,16 +1,20 @@
-import createMiddleware from 'next-intl/middleware';
 import { NextRequest, NextResponse } from 'next/server';
+import createMiddleware from 'next-intl/middleware';
+import { locales } from './lib/locales';
 
-const nextIntMiddleware = createMiddleware({
-  locales: ['en', 'jp'],
+const nextIntlMiddleware = createMiddleware({
+  locales,
   defaultLocale: 'jp',
+  localePrefix: 'never', // This setting controls how locales are handled in the URL
 });
 
-export default function (req: NextRequest, res: NextResponse) {
-  return nextIntMiddleware(req);
+export function middleware(req: NextRequest): NextResponse {
+  return nextIntlMiddleware(req);
 }
 
 export const config = {
-  // match only internal pathnames
-  matcher: ['/', '/(jp|en)/:path*'],
-}
+  matcher: [
+    // Match all pathnames except for those starting with `/api`, `/_next`, `/_vercel`, or containing a dot (e.g., `favicon.ico`)
+    '/((?!api|_next|_vercel|.*\\..*).*)',
+  ],
+};

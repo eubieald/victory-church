@@ -1,9 +1,28 @@
 {
   "Index": {
     "title": "神を尊重し、弟子を作る。",
-    "description": "私たちは生活のすべての領域で神を尊重したいと願っています。私たちが行うすべてのことの出発点、目標、動機は神を尊重することです。私たちが何をするかを理解するための基盤となるものです。それは私たちではなく、すべて神様についてです。"
+    "description": "私たちは生活のあらゆる面で神を尊重したいと願っています。私たちの出発点、目標、動機はすべて神の尊重にあります。私たちが行う理由を理解するための基本となるものです。すべては神様のためであり、私たちのためではありません。"
   },
   "NotFoundPage": {
-    "title": "404 - ページが見つかりません"
+    "title": "404 - ページが見つかりません",
+    "try-again": "もう一度試してください"
+  },
+  "MenuTitle": {
+    "Home": "ホーム",
+    "Who We Are": "私たちについて",
+    "Discipleship": "弟子訓練",
+    "Let's Connect": "つながろう",
+    "Partner With Us": "共に働こう",
+    "Events": "イベント",
+    "Discipleship tools": "弟子訓練ツール",
+    "One 2 One registration": "ワンツーワン登録",
+    "Join a Victory group": "ビクトリーグループに参加",
+    "Give": "奉納する",
+    "Send prayer request": "祈りのリクエストを送信する",
+    "Join a ministry": "職務に参加する",
+    "Support missions": "宣教を支援する",
+    "Support the next generation": "次世代を支援する",
+    "Church trainings": "教会の訓練",
+    "Outreach programs": "外部プログラム"
   }
 }

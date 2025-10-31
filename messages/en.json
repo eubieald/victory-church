@@ -1,9 +1,28 @@
 {
   "Index": {
     "title": "Honor God. Make Disciples.",
-    "description": "We desire to honor God in every area of life. Our starting point,goal, and motive is the honor of God. This is foundational for understanding why we do what we do. It is all about Him, not us."
+    "description": "We desire to honor God in every area of life. Our starting point, goal, and motive is the honor of God. This is foundational for understanding why we do what we do. It is all about Him, not us."
   },
   "NotFoundPage": {
-    "title": "404 - Page Not Found"
+    "title": "404 - Page Not Found",
+    "try-again": "Please try again."
+  },
+  "MenuTitle": {
+    "Home": "Home",
+    "Who We Are": "Who We Are",
+    "Discipleship": "Discipleship",
+    "Let's Connect": "Let's Connect",
+    "Partner With Us": "Partner With Us",
+    "Events": "Events",
+    "Discipleship tools": "Discipleship tools",
+    "One 2 One registration": "One 2 One registration",
+    "Join a Victory group": "Join a Victory group",
+    "Give": "Give",
+    "Send prayer request": "Send prayer request",
+    "Join a ministry": "Join a ministry",
+    "Support missions": "Support missions",
+    "Support the next generation": "Support the next generation",
+    "Church trainings": "Church trainings",
+    "Outreach programs": "Outreach programs"
   }
 }

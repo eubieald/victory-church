@@ -1,0 +1,44 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Define models for Menu and Submenu items
+model MenuItem {
+  id        String        @id @default(cuid())
+  title     String
+  link      String?
+  has_child Boolean       @default(false)
+  is_active Boolean       @default(true)
+  order     Int           @unique
+  subItems  SubmenuItem[]
+}
+
+model SubmenuItem {
+  id        String   @id @default(cuid())
+  title     String
+  link      String?
+  parent    MenuItem @relation(fields: [parentId], references: [id])
+  parentId  String
+  is_active Boolean  @default(true)
+  order     Int      @default(1)
+}
+
+model User {
+  id        Int      @id @default(autoincrement()) // Auto-incrementing integer ID as primary key
+  username  String   @unique // Unique username
+  email     String   @unique // Unique email address
+  password  String // Password (for simplicity, store as plaintext for now)
+  createdAt DateTime @default(now()) // Timestamp for creation date
+  updatedAt DateTime @updatedAt // Timestamp for last update date
+}
