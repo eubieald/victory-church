@@ -1,76 +1,84 @@
-# 🚀 Victory Church Website
 
-This is the web application for **Victory Church** – a modern, fast, and scalable site built using Next.js.  
-It is designed to be developer-friendly, mobile-responsive, and deployment-ready.
+````markdown
+# Victory Church Project
 
----
+## Overview
+Victory Church is a web application built to manage church activities, members, events, and other resources efficiently.
 
-## 📦 Features
+## Tech Stack
 
-- Built with **Next.js**
-- Responsive design for mobile and desktop
-- SEO-optimized and high performance
-- Easy backend/API integration (via Next.js API routes)
-- Configured for smooth deployment (e.g., Vercel)
-- Organized project structure for maintainability
+- **Backend / API:** Node.js + Express
+- **ORM / Database Layer:** Prisma — used for schema definition, type-safe queries, and migrations
+- **Database:** PostgreSQL
+- **Frontend:** (React / Next.js / your frontend framework)
+- **Other Tools:** (any additional libraries/tools you use)
 
----
+## Getting Started
 
-## 🧰 Tech Stack
-
-| Component        | Technology                        |
-|------------------|-----------------------------------|
-| Framework        | Next.js                           |
-| Language         | JavaScript / TypeScript (choose) |
-| Styling          | Tailwind CSS / CSS Modules        |
-| Deployment       | Vercel (recommended)              |
-| Version Control  | Git + GitHub                      |
-
----
-
-## 🚀 Getting Started
-
-### Clone the repository
+1. **Clone the repo**
 ```bash
 git clone https://github.com/eubieald/victory-church.git
-cd victory-church
+````
 
+2. **Install dependencies**
 
-Install dependencies
+```bash
 npm install
-# or
-yarn install
-# or
-pnpm install
+```
 
-Run the development server
+3. **Set up environment variables**
+
+```env
+DATABASE_URL="postgresql://user:password@localhost:5432/dbname"
+```
+
+4. **Generate Prisma client**
+
+```bash
+npx prisma generate
+```
+
+5. **Run migrations**
+
+```bash
+npx prisma migrate dev --name init
+```
+
+6. **Start the server**
+
+```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+```
 
+## Why Prisma?
 
-Then open http://localhost:3000
- in your browser.
+Prisma provides an elegant and type-safe way to interact with your database:
 
+* Declarative schema to define models and relationships
+* Type-safe database operations (`prisma.user.findMany()`)
+* Auto-generated client tailored to your schema
+* Built-in support for migrations and schema evolution
 
- 🏗 Build for Production
-npm run build
-npm run start
-# or
-yarn build && yarn start
+## Folder Structure
 
-🧩 Project Structure
-└── victory-church/
-    ├── public/             # Static assets: images, icons, fonts
-    ├── src/
-    │   ├── pages/          # Page components (Next.js routing)
-    │   ├── components/     # Reusable UI components
-    │   ├── styles/         # Global & component-specific styles
-    │   └── lib/            # Utility functions / API helpers
-    ├── package.json
-    └── next.config.js
+```
+/prisma
+  ├ schema.prisma       ← Data models + datasource
+  ├ migrations/         ← Auto-generated migrations
+/src
+  ├ server.ts / index.ts
+  ├ prismaClient.ts     ← Export Prisma Client
+  └ ...                ← Other server code
+```
 
+## Contributing
 
-    
+* If you modify `schema.prisma`, run `npx prisma migrate dev` to apply changes.
+* Update generated client with `npx prisma generate` after schema changes.
+* Follow existing code style and folder structure.
+
+## License
+
+This project is licensed under the MIT License.
+
+```
